@@ -106,6 +106,8 @@ namespace RubberDuckShop.Infrastructure
                     Price = rnd.Next(600, 1200)
                 });
             }
+
+            ctx.SaveChanges();
         }
     }
 }
