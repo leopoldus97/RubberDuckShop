@@ -30,6 +30,11 @@ namespace RubberDuckShop.Core.ApplicationService.Services
             return _duckPatternRepository.updateDuckPattern(toUpdateDuckPattern);
         }
 
+        public DuckPattern getDuckPatternById(int id)
+        {
+            return _duckPatternRepository.readDuckPatternById(id);
+        }
+
         public List<DuckPattern> getDuckPatterns()
         {
             return _duckPatternRepository.readDuckPatterns().ToList();

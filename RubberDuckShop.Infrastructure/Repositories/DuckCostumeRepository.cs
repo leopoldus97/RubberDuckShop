@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using RubberDuckShop.Core.DomainService;
 using RubberDuckShop.Core.Entity;
@@ -36,6 +37,11 @@ namespace RubberDuckShop.Infrastructure.Repositories
             var duckCostume = _ctx.duckCostumes.Update(toUpdateDuckCostume).Entity;
             _ctx.SaveChanges();
             return duckCostume;
+        }
+
+        public DuckCostume readDuckCostumeById(int id)
+        {
+            return _ctx.duckCostumes.FirstOrDefault(dC => dC.ID == id);
         }
 
         public IEnumerable<DuckCostume> readDuckCostume()

@@ -10,6 +10,7 @@ namespace RubberDuckShop.Core.DomainService
         DuckPattern addDuckPattern(DuckPattern toAddDuckPattern);
         DuckPattern deleteDuckPattern(int toDeleteId);
         DuckPattern updateDuckPattern(DuckPattern toUpdateDuckPattern);
+        DuckPattern readDuckPatternById(int id);
         IEnumerable<DuckPattern> readDuckPatterns();
     }
 }

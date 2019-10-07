@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using RubberDuckShop.Core.DomainService;
 using RubberDuckShop.Core.Entity;
@@ -36,6 +37,11 @@ namespace RubberDuckShop.Infrastructure.Repositories
             var duckColor = _ctx.duckColors.Update(toUpdateDuckColor).Entity;
             _ctx.SaveChanges();
             return duckColor;
+        }
+
+        public DuckColor readDuckColorById(int id)
+        {
+            return _ctx.duckColors.FirstOrDefault(dC => dC.ID == id);
         }
 
         public IEnumerable<DuckColor> readDuckColors()

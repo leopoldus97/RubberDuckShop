@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using RubberDuckShop.Core.DomainService;
 using RubberDuckShop.Core.Entity;
@@ -36,6 +37,11 @@ namespace RubberDuckShop.Infrastructure.Repositories
             var duckPattern = _ctx.duckPatterns.Update(toUpdateDuckPattern).Entity;
             _ctx.SaveChanges();
             return duckPattern;
+        }
+
+        public DuckPattern readDuckPatternById(int id)
+        {
+            return _ctx.duckPatterns.FirstOrDefault(dP => dP.ID == id);
         }
 
         public IEnumerable<DuckPattern> readDuckPatterns()
