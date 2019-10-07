@@ -16,22 +16,31 @@ namespace RubberDuckShop.Infrastructure.Repositories
         }
         public DuckCostume addDuckCostume(DuckCostume toAddDuckCostume)
         {
-            throw new NotImplementedException();
+            var duckCostume = _ctx.duckCostumes.Add(toAddDuckCostume).Entity;
+            _ctx.SaveChanges();
+            return duckCostume;
         }
 
         public DuckCostume deleteDuckCostume(int toDeleteId)
         {
-            throw new NotImplementedException();
+            var duckCostume = _ctx.Remove(new DuckCostume()
+            {
+                ID = toDeleteId
+            }).Entity;
+            _ctx.SaveChanges();
+            return duckCostume;
         }
 
         public DuckCostume updateDuckCostume(DuckCostume toUpdateDuckCostume)
         {
-            throw new NotImplementedException();
+            var duckCostume = _ctx.duckCostumes.Update(toUpdateDuckCostume).Entity;
+            _ctx.SaveChanges();
+            return duckCostume;
         }
 
         public IEnumerable<DuckCostume> readDuckCostume()
         {
-            throw new NotImplementedException();
+            return _ctx.duckCostumes;
         }
     }
 }

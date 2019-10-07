@@ -33,7 +33,9 @@ namespace RubberDuckShop.Infrastructure.Repositories
 
         public DuckColor updateDuckColor(DuckColor toUpdateDuckColor)
         {
-            throw new NotImplementedException();
+            var duckColor = _ctx.duckColors.Update(toUpdateDuckColor).Entity;
+            _ctx.SaveChanges();
+            return duckColor;
         }
 
         public IEnumerable<DuckColor> readDuckColors()
