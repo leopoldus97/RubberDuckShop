@@ -29,7 +29,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public List<DuckPattern> readDuckPatterns()
+        public IEnumerable<DuckPattern> readDuckPatterns()
         {
             throw new NotImplementedException();
         }

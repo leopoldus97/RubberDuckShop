@@ -10,6 +10,6 @@ namespace RubberDuckShop.Core.DomainService
         DuckCostume addDuckCostume(DuckCostume toAddDuckCostume);
         DuckCostume deleteDuckCostume(int toDeleteId);
         DuckCostume updateDuckCostume(DuckCostume toUpdateDuckCostume);
-        List<DuckCostume> readDuckCostume();
+        IEnumerable<DuckCostume> readDuckCostume();
     }
 }

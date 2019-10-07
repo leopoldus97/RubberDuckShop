@@ -16,7 +16,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
         }
         public DuckColor addDuckColor(DuckColor toAddDuckColor)
         {
-            var duckColor = _ctx.duckColor.Add(toAddDuckColor).Entity;
+            var duckColor = _ctx.duckColors.Add(toAddDuckColor).Entity;
             _ctx.SaveChanges();
             return duckColor;
         }
@@ -36,9 +36,9 @@ namespace RubberDuckShop.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public List<DuckColor> readDuckColors()
+        public IEnumerable<DuckColor> readDuckColors()
         {
-            throw new NotImplementedException();
+            return _ctx.duckColors;
         }
     }
 }

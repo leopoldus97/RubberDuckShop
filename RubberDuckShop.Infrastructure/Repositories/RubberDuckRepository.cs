@@ -26,7 +26,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public List<RubberDuck> readAllDucks()
+        public IEnumerable<RubberDuck> readAllDucks()
         {
             throw new NotImplementedException();
         }
@@ -36,12 +36,12 @@ namespace RubberDuckShop.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public List<RubberDuck> readSearchedDucks(string search)
+        public IEnumerable<RubberDuck> readSearchedDucks(string search)
         {
             throw new NotImplementedException();
         }
 
-        public List<RubberDuck> readSortedDucks(Filter filter)
+        public IEnumerable<RubberDuck> readSortedDucks(Filter filter)
         {
             throw new Exception();
         }

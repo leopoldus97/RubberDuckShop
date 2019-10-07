@@ -17,8 +17,8 @@ namespace RubberDuckShop.Infrastructure
         }
 
         public DbSet<RubberDuck> rubberDucks { get; set; }
-        public DbSet<DuckColor> duckColor { get; set; }
-        public DbSet<DuckCostume> duckCostume { get; set; }
-        public DbSet<DuckPattern> duckPattern { get; set; }
+        public DbSet<DuckColor> duckColors { get; set; }
+        public DbSet<DuckCostume> duckCostumes { get; set; }
+        public DbSet<DuckPattern> duckPatterns { get; set; }
     }
 }

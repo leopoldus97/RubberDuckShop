@@ -10,6 +10,6 @@ namespace RubberDuckShop.Core.DomainService
         DuckColor addDuckColor(DuckColor toAddDuckColor);
         DuckColor deleteDuckColor(int toDeleteId);
         DuckColor updateDuckColor(DuckColor toUpdateDuckColor);
-        List<DuckColor> readDuckColors();
+        IEnumerable<DuckColor> readDuckColors();
     }
 }
