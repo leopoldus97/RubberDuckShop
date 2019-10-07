@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using RubberDuckShop.Core.DomainService;
 using RubberDuckShop.Core.Entity;
@@ -32,12 +33,12 @@ namespace RubberDuckShop.Core.ApplicationService.Services
 
         public List<RubberDuck> getSearchedDucks(string search)
         {
-            return _rubberDuckRepository.readSearchedDucks(search);
+            return _rubberDuckRepository.readSearchedDucks(search).ToList();
         }
 
         public List<RubberDuck> getSortedDucks(Filter filter)
         {
-            return _rubberDuckRepository.readSortedDucks(filter);
+            return _rubberDuckRepository.readSortedDucks(filter).ToList();
         }
 
         public RubberDuck updateDuck(RubberDuck toUpdateRubberDuck)

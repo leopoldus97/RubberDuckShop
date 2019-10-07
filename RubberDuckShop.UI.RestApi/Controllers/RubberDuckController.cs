@@ -22,32 +22,32 @@ namespace RubberDuckShop.UI.RestApi.Controllers
 
         [HttpGet]
         public ActionResult<RubberDuck> Get()
-        { 
-            
+        {
+            return null;
         }
 
         [HttpPost]
         public ActionResult<RubberDuck> Post()
         {
-
+            return null;
         }
 
         [HttpPut]
         public ActionResult<RubberDuck> Put()
         {
-
+            return null;
         }
 
         [HttpDelete]
         public ActionResult<bool> Delete()
         {
-
+            return null;
         }
 
         [HttpGet]
         public ActionResult<List<RubberDuck>> GetSorted()
         {
-
+            return null;
         }
     }
 }

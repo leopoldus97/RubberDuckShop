@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using RubberDuckShop.Core.DomainService;
 using RubberDuckShop.Core.Entity;
@@ -31,7 +32,7 @@ namespace RubberDuckShop.Core.ApplicationService.Services
 
         public List<DuckPattern> getDuckPatterns()
         {
-            return _duckPatternRepository.readDuckPatterns();
+            return _duckPatternRepository.readDuckPatterns().ToList();
         }
     }
 }
