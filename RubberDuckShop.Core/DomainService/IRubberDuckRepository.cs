@@ -9,9 +9,9 @@ namespace RubberDuckShop.Core.DomainService
     public interface IRubberDuckRepository
     {
         List<RubberDuck> readAllDucks();
-        RubberDuck addDuck(RubberDuck rubberDuck);
-        RubberDuck deleteDuck(RubberDuck rubberDuck);
-        RubberDuck updateDuck(RubberDuck rubberDuck);
+        RubberDuck addDuck(RubberDuck toAddRubberDuck);
+        RubberDuck deleteDuck(RubberDuck toDeleteRubberDuck);
+        RubberDuck updateDuck(RubberDuck toUpdateRubberDuck);
         RubberDuck readDuckById(int id);
         List<RubberDuck> readSortedDucks(Filter filter);
         List<RubberDuck> readSearchedDucks(string search);

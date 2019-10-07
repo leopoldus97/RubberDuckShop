@@ -10,18 +10,18 @@ namespace RubberDuckShop.Infrastructure.Repositories
 {
     public class RubberDuckRepository : IRubberDuckRepository
     {
-        readonly IRubberDuckService _rubberDuckService;
-        public RubberDuckRepository(IRubberDuckService rubberDuckService)
-        {
-            _rubberDuckService = rubberDuckService;
-        }
+        private readonly RubberDuckShopContext _ctx;
 
-        public RubberDuck addDuck(RubberDuck rubberDuck)
+        public RubberDuckRepository(RubberDuckShopContext ctx)
+        {
+            _ctx = ctx;
+        }
+        public RubberDuck addDuck(RubberDuck toAddRubberDuck)
         {
             throw new NotImplementedException();
         }
 
-        public RubberDuck deleteDuck(RubberDuck rubberDuck)
+        public RubberDuck deleteDuck(RubberDuck toDeleteRubberDuck)
         {
             throw new NotImplementedException();
         }
@@ -46,7 +46,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
             throw new Exception();
         }
 
-        public RubberDuck updateDuck(RubberDuck rubberDuck)
+        public RubberDuck updateDuck(RubberDuck toUpdateRubberDuck)
         {
             throw new NotImplementedException();
         }

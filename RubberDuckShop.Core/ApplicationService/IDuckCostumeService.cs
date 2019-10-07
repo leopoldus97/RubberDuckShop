@@ -7,9 +7,9 @@ namespace RubberDuckShop.Core.ApplicationService
 {
     public interface IDuckCostumeService
     {
-        DuckCostume addDuckCostume(DuckCostume duckCostume);
-        DuckCostume deleteDuckCostume(DuckCostume duckCostume);
-        DuckCostume updateDuckCostume(DuckCostume duckCostume);
+        DuckCostume addDuckCostume(DuckCostume toAddDuckCostume);
+        DuckCostume deleteDuckCostume(DuckCostume toDeleteDuckCostume);
+        DuckCostume updateDuckCostume(DuckCostume toUpdateDuckCostume);
         List<DuckCostume> getDuckCostume();
     }
 }

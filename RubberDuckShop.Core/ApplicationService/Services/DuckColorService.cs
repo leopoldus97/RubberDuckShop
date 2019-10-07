@@ -14,19 +14,19 @@ namespace RubberDuckShop.Core.ApplicationService.Services
         {
             _duckColorRepository = duckColorRepository;
         }
-        public DuckColor addDuckColor(DuckColor duckColor)
+        public DuckColor addDuckColor(DuckColor toAddDuckColor)
         {
-           return _duckColorRepository.addDuckColor(duckColor);
+           return _duckColorRepository.addDuckColor(toAddDuckColor);
         }
 
-        public DuckColor deleteDuckColor(DuckColor duckColor)
+        public DuckColor deleteDuckColor(DuckColor toDeleteDuckColor)
         {
-            return _duckColorRepository.deleteDuckColor(duckColor);
+            return _duckColorRepository.deleteDuckColor(toDeleteDuckColor);
         }
 
-        public DuckColor updateDuckColor(DuckColor duckColor)
+        public DuckColor updateDuckColor(DuckColor toUpdateDuckColor)
         {
-            return _duckColorRepository.updateDuckColor(duckColor);
+            return _duckColorRepository.updateDuckColor(toUpdateDuckColor);
         }
 
         public List<DuckColor> getDuckColors()

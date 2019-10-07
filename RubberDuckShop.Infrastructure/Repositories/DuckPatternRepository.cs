@@ -8,17 +8,23 @@ namespace RubberDuckShop.Infrastructure.Repositories
 {
     public class DuckPatternRepository : IDuckPatternRepository
     {
-        public DuckPattern addDuckPattern(DuckPattern duckPattern)
+        private readonly RubberDuckShopContext _ctx;
+
+        public DuckPatternRepository(RubberDuckShopContext ctx)
+        {
+            _ctx = ctx;
+        }
+        public DuckPattern addDuckPattern(DuckPattern toAddDuckPattern)
         {
             throw new NotImplementedException();
         }
 
-        public DuckPattern deleteDuckPattern(DuckPattern duckPattern)
+        public DuckPattern deleteDuckPattern(DuckPattern toDeleteDuckPattern)
         {
             throw new NotImplementedException();
         }
 
-        public DuckPattern updateDuckPattern(DuckPattern duckPattern)
+        public DuckPattern updateDuckPattern(DuckPattern toUpdateDuckPattern)
         {
             throw new NotImplementedException();
         }

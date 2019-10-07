@@ -15,14 +15,14 @@ namespace RubberDuckShop.Core.ApplicationService.Services
         {
             _rubberDuckRepository = rubberDuckRepository;
         }
-        public RubberDuck addDuck(RubberDuck rubberDuck)
+        public RubberDuck addDuck(RubberDuck toAddRubberDuck)
         {
-            return _rubberDuckRepository.addDuck(rubberDuck);
+            return _rubberDuckRepository.addDuck(toAddRubberDuck);
         }
 
-        public RubberDuck deleteDuck(RubberDuck rubberDuck)
+        public RubberDuck deleteDuck(RubberDuck toDeleteRubberDuck)
         {
-            return _rubberDuckRepository.deleteDuck(rubberDuck);
+            return _rubberDuckRepository.deleteDuck(toDeleteRubberDuck);
         }
 
         public RubberDuck getDuckById(int id)
@@ -40,9 +40,9 @@ namespace RubberDuckShop.Core.ApplicationService.Services
             return _rubberDuckRepository.readSortedDucks(filter);
         }
 
-        public RubberDuck updateDuck(RubberDuck rubberDuck)
+        public RubberDuck updateDuck(RubberDuck toUpdateRubberDuck)
         {
-            return _rubberDuckRepository.updateDuck(rubberDuck);
+            return _rubberDuckRepository.updateDuck(toUpdateRubberDuck);
         }
     }
 }

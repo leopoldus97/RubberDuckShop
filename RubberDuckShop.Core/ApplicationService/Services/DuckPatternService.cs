@@ -14,19 +14,19 @@ namespace RubberDuckShop.Core.ApplicationService.Services
         {
             _duckPatternRepository = duckPatternRepository;
         }
-        public DuckPattern addDuckPattern(DuckPattern duckPattern)
+        public DuckPattern addDuckPattern(DuckPattern toAddDuckPattern)
         {
-            return _duckPatternRepository.addDuckPattern(duckPattern);
+            return _duckPatternRepository.addDuckPattern(toAddDuckPattern);
         }
 
-        public DuckPattern deleteDuckPattern(DuckPattern duckPattern)
+        public DuckPattern deleteDuckPattern(DuckPattern toDeleteDuckPattern)
         {
-            return _duckPatternRepository.deleteDuckPattern(duckPattern);
+            return _duckPatternRepository.deleteDuckPattern(toDeleteDuckPattern);
         }
 
-        public DuckPattern updateDuckPattern(DuckPattern duckPattern)
+        public DuckPattern updateDuckPattern(DuckPattern toUpdateDuckPattern)
         {
-            return _duckPatternRepository.updateDuckPattern(duckPattern);
+            return _duckPatternRepository.updateDuckPattern(toUpdateDuckPattern);
         }
 
         public List<DuckPattern> getDuckPatterns()

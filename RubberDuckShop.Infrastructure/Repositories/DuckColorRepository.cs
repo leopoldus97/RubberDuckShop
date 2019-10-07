@@ -8,17 +8,23 @@ namespace RubberDuckShop.Infrastructure.Repositories
 {
     public class DuckColorRepository : IDuckColorRepository
     {
-        public DuckColor addDuckColor(DuckColor duckColor)
+        private readonly RubberDuckShopContext _ctx;
+
+        public DuckColorRepository(RubberDuckShopContext ctx)
+        {
+            _ctx = ctx;
+        }
+        public DuckColor addDuckColor(DuckColor toAddDuckColor)
         {
             throw new NotImplementedException();
         }
 
-        public DuckColor deleteDuckColor(DuckColor duckColor)
+        public DuckColor deleteDuckColor(DuckColor toDeleteDuckColor)
         {
             throw new NotImplementedException();
         }
 
-        public DuckColor updateDuckColor(DuckColor duckColor)
+        public DuckColor updateDuckColor(DuckColor toUpdateDuckColor)
         {
             throw new NotImplementedException();
         }
