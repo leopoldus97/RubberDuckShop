@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using RubberDuckShop.Core.DomainService;
 using RubberDuckShop.Core.Entity;
 using RubberDuckShop.Core.Entity.Filtering;
 
@@ -8,34 +9,40 @@ namespace RubberDuckShop.Core.ApplicationService.Services
 {
     public class RubberDuckService : IRubberDuckService
     {
+        private readonly IRubberDuckRepository _rubberDuckRepository;
+
+        public RubberDuckService(IRubberDuckRepository rubberDuckRepository)
+        {
+            _rubberDuckRepository = rubberDuckRepository;
+        }
         public RubberDuck addDuck(RubberDuck rubberDuck)
         {
-            throw new NotImplementedException();
+            return _rubberDuckRepository.addDuck(rubberDuck);
         }
 
         public RubberDuck deleteDuck(RubberDuck rubberDuck)
         {
-            throw new NotImplementedException();
+            return _rubberDuckRepository.deleteDuck(rubberDuck);
         }
 
         public RubberDuck getDuckById(int id)
         {
-            throw new NotImplementedException();
+            return _rubberDuckRepository.readDuckById(id);
         }
 
         public List<RubberDuck> getSearchedDucks(string search)
         {
-            throw new NotImplementedException();
+            return _rubberDuckRepository.readSearchedDucks(search);
         }
 
         public List<RubberDuck> getSortedDucks(Filter filter)
         {
-            throw new NotImplementedException();
+            return _rubberDuckRepository.readSortedDucks(filter);
         }
 
         public RubberDuck updateDuck(RubberDuck rubberDuck)
         {
-            throw new NotImplementedException();
+            return _rubberDuckRepository.updateDuck(rubberDuck);
         }
     }
 }

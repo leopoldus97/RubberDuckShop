@@ -16,22 +16,22 @@ namespace RubberDuckShop.Core.ApplicationService.Services
         }
         public DuckCostume addDuckCostume(DuckCostume duckCostume)
         {
-            throw new NotImplementedException();
+            return _duckCostumeRepository.addDuckCostume(duckCostume);
         }
 
         public DuckCostume deleteDuckCostume(DuckCostume duckCostume)
         {
-            throw new NotImplementedException();
+            return _duckCostumeRepository.deleteDuckCostume(duckCostume);
         }
 
         public DuckCostume updateDuckCostume(DuckCostume duckCostume)
         {
-            throw new NotImplementedException();
+            return _duckCostumeRepository.updateDuckCostume(duckCostume);
         }
 
         public List<DuckCostume> getDuckCostume()
         {
-            throw new NotImplementedException();
+            return _duckCostumeRepository.readDuckCostume();
         }
     }
 }

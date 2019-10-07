@@ -16,22 +16,22 @@ namespace RubberDuckShop.Core.ApplicationService.Services
         }
         public DuckColor addDuckColor(DuckColor duckColor)
         {
-            throw new NotImplementedException();
+           return _duckColorRepository.addDuckColor(duckColor);
         }
 
         public DuckColor deleteDuckColor(DuckColor duckColor)
         {
-            throw new NotImplementedException();
+            return _duckColorRepository.deleteDuckColor(duckColor);
         }
 
         public DuckColor updateDuckColor(DuckColor duckColor)
         {
-            throw new NotImplementedException();
+            return _duckColorRepository.updateDuckColor(duckColor);
         }
 
         public List<DuckColor> getDuckColors()
         {
-            throw new NotImplementedException();
+            return _duckColorRepository.readDuckColors();
         }
     }
 }
