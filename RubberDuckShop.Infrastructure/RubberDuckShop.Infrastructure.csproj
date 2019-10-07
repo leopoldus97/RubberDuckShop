@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RubberDuckShop.Core.Entity\RubberDuckShop.Core.Entity.csproj" />
     <ProjectReference Include="..\RubberDuckShop.Core\RubberDuckShop.Core.csproj" />
   </ItemGroup>
 

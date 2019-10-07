@@ -1,4 +1,5 @@
-﻿using RubberDuckShop.Core.DomainService;
+﻿using RubberDuckShop.Core.ApplicationService;
+using RubberDuckShop.Core.DomainService;
 using RubberDuckShop.Core.Entity;
 using RubberDuckShop.Core.Entity.Filtering;
 using System;
@@ -9,6 +10,12 @@ namespace RubberDuckShop.Infrastructure.Repositories
 {
     public class RubberDuckRepository : IRubberDuckRepository
     {
+        readonly IRubberDuckService _rubberDuckService;
+        public RubberDuckRepository(IRubberDuckService rubberDuckService)
+        {
+            _rubberDuckService = rubberDuckService;
+        }
+
         public RubberDuck addDuck(RubberDuck rubberDuck)
         {
             throw new NotImplementedException();
@@ -36,7 +43,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
 
         public List<RubberDuck> readSortedDucks(Filter filter)
         {
-            throw new NotImplementedException();
+            throw new Exception();
         }
 
         public RubberDuck updateDuck(RubberDuck rubberDuck)
