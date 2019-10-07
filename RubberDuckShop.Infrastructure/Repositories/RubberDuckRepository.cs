@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RubberDuckShop.Core.DomainService;
 using RubberDuckShop.Core.Entity;
 using RubberDuckShop.Core.Entity.Filtering;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace RubberDuckShop.Core.ApplicationService.Services
+namespace RubberDuckShop.Infrastructure.Repositories
 {
-    public class RubberDuckService : IRubberDuckService
+    public class RubberDuckRepository : IRubberDuckRepository
     {
         public RubberDuck addDuck(RubberDuck rubberDuck)
         {
@@ -18,17 +19,22 @@ namespace RubberDuckShop.Core.ApplicationService.Services
             throw new NotImplementedException();
         }
 
-        public RubberDuck getDuckById(int id)
+        public List<RubberDuck> readAllDucks()
         {
             throw new NotImplementedException();
         }
 
-        public List<RubberDuck> getSearchedDucks(string search)
+        public RubberDuck readDuckById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<RubberDuck> getSortedDucks(Filter filter)
+        public List<RubberDuck> readSearchedDucks(string search)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<RubberDuck> readSortedDucks(Filter filter)
         {
             throw new NotImplementedException();
         }

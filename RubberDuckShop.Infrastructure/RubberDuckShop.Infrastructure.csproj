@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\RubberDuckShop.Core\RubberDuckShop.Core.csproj" />
   </ItemGroup>
 
 </Project>
