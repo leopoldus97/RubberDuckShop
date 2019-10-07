@@ -19,9 +19,9 @@ namespace RubberDuckShop.Core.ApplicationService.Services
             return _duckPatternRepository.addDuckPattern(toAddDuckPattern);
         }
 
-        public DuckPattern deleteDuckPattern(DuckPattern toDeleteDuckPattern)
+        public DuckPattern deleteDuckPattern(int toDeleteId)
         {
-            return _duckPatternRepository.deleteDuckPattern(toDeleteDuckPattern);
+            return _duckPatternRepository.deleteDuckPattern(toDeleteId);
         }
 
         public DuckPattern updateDuckPattern(DuckPattern toUpdateDuckPattern)

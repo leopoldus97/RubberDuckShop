@@ -19,9 +19,9 @@ namespace RubberDuckShop.Core.ApplicationService.Services
            return _duckColorRepository.addDuckColor(toAddDuckColor);
         }
 
-        public DuckColor deleteDuckColor(DuckColor toDeleteDuckColor)
+        public DuckColor deleteDuckColor(int toDeleteId)
         {
-            return _duckColorRepository.deleteDuckColor(toDeleteDuckColor);
+            return _duckColorRepository.deleteDuckColor(toDeleteId);
         }
 
         public DuckColor updateDuckColor(DuckColor toUpdateDuckColor)

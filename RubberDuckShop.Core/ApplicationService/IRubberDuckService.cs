@@ -9,7 +9,7 @@ namespace RubberDuckShop.Core.ApplicationService
     public interface IRubberDuckService
     {
         RubberDuck addDuck(RubberDuck toAddRubberDuck);
-        RubberDuck deleteDuck(RubberDuck toDeleteRubberDuck);
+        RubberDuck deleteDuck(int toDeleteId);
         RubberDuck updateDuck(RubberDuck toUpdateRubberDuck);
         RubberDuck getDuckById(int id);
         List<RubberDuck> getSortedDucks(Filter filter);

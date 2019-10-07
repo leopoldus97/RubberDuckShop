@@ -21,7 +21,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public RubberDuck deleteDuck(RubberDuck toDeleteRubberDuck)
+        public RubberDuck deleteDuck(int toDeleteId)
         {
             throw new NotImplementedException();
         }

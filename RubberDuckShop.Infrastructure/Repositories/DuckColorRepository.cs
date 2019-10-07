@@ -16,12 +16,19 @@ namespace RubberDuckShop.Infrastructure.Repositories
         }
         public DuckColor addDuckColor(DuckColor toAddDuckColor)
         {
-            throw new NotImplementedException();
+            var duckColor = _ctx.duckColor.Add(toAddDuckColor).Entity;
+            _ctx.SaveChanges();
+            return duckColor;
         }
 
-        public DuckColor deleteDuckColor(DuckColor toDeleteDuckColor)
+        public DuckColor deleteDuckColor(int toDeleteId)
         {
-            throw new NotImplementedException();
+            var duckColor = _ctx.Remove(new DuckColor()
+            {
+                ID = toDeleteId
+            }).Entity;
+            _ctx.SaveChanges();
+            return duckColor;
         }
 
         public DuckColor updateDuckColor(DuckColor toUpdateDuckColor)

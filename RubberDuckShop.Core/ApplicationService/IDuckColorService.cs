@@ -8,7 +8,7 @@ namespace RubberDuckShop.Core.ApplicationService
     public interface IDuckColorService
     {
         DuckColor addDuckColor(DuckColor toAddDuckColor);
-        DuckColor deleteDuckColor(DuckColor toDeleteDuckColor);
+        DuckColor deleteDuckColor(int toDeleteId);
         DuckColor updateDuckColor(DuckColor toUpdateDuckColor);
         List<DuckColor> getDuckColors();
     }

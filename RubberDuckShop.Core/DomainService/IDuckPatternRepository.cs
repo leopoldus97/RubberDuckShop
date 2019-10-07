@@ -8,7 +8,7 @@ namespace RubberDuckShop.Core.DomainService
     public interface IDuckPatternRepository
     {
         DuckPattern addDuckPattern(DuckPattern toAddDuckPattern);
-        DuckPattern deleteDuckPattern(DuckPattern toDeleteDuckPattern);
+        DuckPattern deleteDuckPattern(int toDeleteId);
         DuckPattern updateDuckPattern(DuckPattern toUpdateDuckPattern);
         List<DuckPattern> readDuckPatterns();
     }

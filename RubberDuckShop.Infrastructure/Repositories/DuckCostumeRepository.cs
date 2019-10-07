@@ -19,7 +19,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public DuckCostume deleteDuckCostume(DuckCostume toDeleteDuckCostume)
+        public DuckCostume deleteDuckCostume(int toDeleteId)
         {
             throw new NotImplementedException();
         }

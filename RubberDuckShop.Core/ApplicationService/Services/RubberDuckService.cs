@@ -20,9 +20,9 @@ namespace RubberDuckShop.Core.ApplicationService.Services
             return _rubberDuckRepository.addDuck(toAddRubberDuck);
         }
 
-        public RubberDuck deleteDuck(RubberDuck toDeleteRubberDuck)
+        public RubberDuck deleteDuck(int toDeleteId)
         {
-            return _rubberDuckRepository.deleteDuck(toDeleteRubberDuck);
+            return _rubberDuckRepository.deleteDuck(toDeleteId);
         }
 
         public RubberDuck getDuckById(int id)

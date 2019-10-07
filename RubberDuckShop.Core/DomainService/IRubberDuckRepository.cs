@@ -10,7 +10,7 @@ namespace RubberDuckShop.Core.DomainService
     {
         List<RubberDuck> readAllDucks();
         RubberDuck addDuck(RubberDuck toAddRubberDuck);
-        RubberDuck deleteDuck(RubberDuck toDeleteRubberDuck);
+        RubberDuck deleteDuck(int toDeleteId);
         RubberDuck updateDuck(RubberDuck toUpdateRubberDuck);
         RubberDuck readDuckById(int id);
         List<RubberDuck> readSortedDucks(Filter filter);

@@ -19,9 +19,9 @@ namespace RubberDuckShop.Core.ApplicationService.Services
             return _duckCostumeRepository.addDuckCostume(toAddDuckCostume);
         }
 
-        public DuckCostume deleteDuckCostume(DuckCostume toDeleteDuckCostume)
+        public DuckCostume deleteDuckCostume(int toDeleteId)
         {
-            return _duckCostumeRepository.deleteDuckCostume(toDeleteDuckCostume);
+            return _duckCostumeRepository.deleteDuckCostume(toDeleteId);
         }
 
         public DuckCostume updateDuckCostume(DuckCostume toUpdateDuckCostume)
