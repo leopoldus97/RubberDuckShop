@@ -10,7 +10,7 @@ namespace RubberDuckShop.Infrastructure
     {
         public static void Seed(RubberDuckShopContext ctx)
         {
-           // ctx.Database.EnsureDeleted();
+            ctx.Database.EnsureDeleted();
             ctx.Database.EnsureCreated();
 
             DuckColor dcol1 = ctx.DuckColors.Add(new DuckColor()

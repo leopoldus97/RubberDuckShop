@@ -86,7 +86,6 @@ namespace RubberDuckShop.UI.RestApi
                     var ctx = scope.ServiceProvider.GetService<RubberDuckShopContext>();
                     //ctx.Database.EnsureDeleted();
                     ctx.Database.EnsureCreated();
-                    DbInitializer.Seed(ctx);
                 }
                 app.UseHsts();
             }
