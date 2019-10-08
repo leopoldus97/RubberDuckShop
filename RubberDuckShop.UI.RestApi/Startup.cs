@@ -21,20 +21,33 @@ namespace RubberDuckShop.UI.RestApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+            Environment = env;
+
         }
 
         public IConfiguration Configuration { get; }
+        public IHostingEnvironment Environment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddCors(options =>
                 options.AddPolicy("AnyOrigin", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod())
             );
-            services.AddDbContext<RubberDuckShopContext>(opt => opt.UseSqlite("Data source=rubberDuckApp.db"));
+            if (Environment.IsDevelopment())
+            {
+                services.AddDbContext<RubberDuckShopContext>(opt => opt.UseSqlite("Data source=rubberDuckApp.db"));
+            }
+            else
+            {
+                // Azure SQL database:
+                services.AddDbContext<RubberDuckShopContext>(opt =>
+                    opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+            }
 
             services.AddScoped<IRubberDuckRepository, RubberDuckRepository>();
             services.AddScoped<IRubberDuckService, RubberDuckService>();
@@ -73,7 +86,6 @@ namespace RubberDuckShop.UI.RestApi
                     var ctx = scope.ServiceProvider.GetService<RubberDuckShopContext>();
                     //ctx.Database.EnsureDeleted();
                     ctx.Database.EnsureCreated();
-                    DbInitializer.Seed(ctx);
                 }
                 app.UseHsts();
             }
