@@ -17,7 +17,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
         }
         public DuckCostume AddDuckCostume(DuckCostume toAddDuckCostume)
         {
-            var duckCostume = _ctx.duckCostumes.Add(toAddDuckCostume).Entity;
+            var duckCostume = _ctx.DuckCostumes.Add(toAddDuckCostume).Entity;
             _ctx.SaveChanges();
             return duckCostume;
         }
@@ -34,19 +34,19 @@ namespace RubberDuckShop.Infrastructure.Repositories
 
         public DuckCostume UpdateDuckCostume(DuckCostume toUpdateDuckCostume)
         {
-            var duckCostume = _ctx.duckCostumes.Update(toUpdateDuckCostume).Entity;
+            var duckCostume = _ctx.DuckCostumes.Update(toUpdateDuckCostume).Entity;
             _ctx.SaveChanges();
             return duckCostume;
         }
 
-        public DuckCostume readDuckCostumeById(int id)
+        public DuckCostume ReadDuckCostumeById(int id)
         {
-            return _ctx.duckCostumes.FirstOrDefault(dC => dC.ID == id);
+            return _ctx.DuckCostumes.FirstOrDefault(dC => dC.ID == id);
         }
 
         public IEnumerable<DuckCostume> ReadDuckCostume()
         {
-            return _ctx.duckCostumes;
+            return _ctx.DuckCostumes;
         }
     }
 }

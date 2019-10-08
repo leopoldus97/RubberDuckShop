@@ -7,10 +7,10 @@ namespace RubberDuckShop.Core.DomainService
 {
     public interface IDuckColorRepository
     {
-        DuckColor addDuckColor(DuckColor toAddDuckColor);
-        DuckColor deleteDuckColor(int toDeleteId);
-        DuckColor updateDuckColor(DuckColor toUpdateDuckColor);
-        DuckColor readDuckColorById(int id);
-        IEnumerable<DuckColor> readDuckColors();
+        DuckColor AddDuckColor(DuckColor toAddDuckColor);
+        DuckColor DeleteDuckColor(int toDeleteId);
+        DuckColor UpdateDuckColor(DuckColor toUpdateDuckColor);
+        DuckColor ReadDuckColorById(int id);
+        IEnumerable<DuckColor> ReadDuckColors();
     }
 }

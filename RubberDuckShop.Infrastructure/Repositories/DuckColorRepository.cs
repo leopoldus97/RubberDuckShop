@@ -35,17 +35,17 @@ namespace RubberDuckShop.Infrastructure.Repositories
 
         public DuckColor UpdateDuckColor(DuckColor toUpdateDuckColor)
         {
-            var duckColor = _ctx.duckColors.Update(toUpdateDuckColor).Entity;
+            var duckColor = _ctx.DuckColors.Update(toUpdateDuckColor).Entity;
             _ctx.SaveChanges();
             return duckColor;
         }
 
-        public DuckColor readDuckColorById(int id)
+        public DuckColor ReadDuckColorById(int id)
         {
-            return _ctx.duckColors.FirstOrDefault(dC => dC.ID == id);
+            return _ctx.DuckColors.FirstOrDefault(dC => dC.ID == id);
         }
 
-        public IEnumerable<DuckColor> readDuckColors()
+        public IEnumerable<DuckColor> ReadDuckColors()
         {
             return _ctx.DuckColors;
         }

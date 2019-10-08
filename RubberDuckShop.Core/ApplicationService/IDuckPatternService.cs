@@ -7,10 +7,10 @@ namespace RubberDuckShop.Core.ApplicationService
 {
     public interface IDuckPatternService
     {
-        DuckPattern addDuckPattern(DuckPattern toAddDuckPattern);
-        DuckPattern deleteDuckPattern(int toDeleteId);
-        DuckPattern updateDuckPattern(DuckPattern toUpdateDuckPattern);
-        DuckPattern getDuckPatternById(int id);
-        List<DuckPattern> getDuckPatterns();
+        DuckPattern AddDuckPattern(DuckPattern toAddDuckPattern);
+        DuckPattern DeleteDuckPattern(int toDeleteId);
+        DuckPattern UpdateDuckPattern(DuckPattern toUpdateDuckPattern);
+        DuckPattern GetDuckPatternById(int id);
+        List<DuckPattern> GetDuckPatterns();
     }
 }

@@ -33,12 +33,12 @@ namespace RubberDuckShop.Core.ApplicationService.Services
 
         public List<RubberDuck> GetSearchedDucks(string search)
         {
-            return _rubberDuckRepository.readSearchedDucks(search).ToList();
+            return _rubberDuckRepository.ReadSearchedDucks(search).ToList();
         }
 
         public List<RubberDuck> GetSortedDucks(Filter filter)
         {
-            return _rubberDuckRepository.readSortedDucks(filter).ToList();
+            return _rubberDuckRepository.ReadSortedDucks(filter).ToList();
         }
 
         public RubberDuck UpdateDuck(RubberDuck toUpdateRubberDuck)

@@ -30,14 +30,14 @@ namespace RubberDuckShop.Core.ApplicationService.Services
             return _duckColorRepository.UpdateDuckColor(toUpdateDuckColor);
         }
 
-        public DuckColor getDuckColorById(int id)
+        public DuckColor GetDuckColorById(int id)
         {
-            return _duckColorRepository.readDuckColorById(id);
+            return _duckColorRepository.ReadDuckColorById(id);
         }
 
-        public List<DuckColor> getDuckColors()
+        public List<DuckColor> GetDuckColors()
         {
-            return _duckColorRepository.readDuckColors();
+            return _duckColorRepository.ReadDuckColors().ToList();
         }
     }
 }

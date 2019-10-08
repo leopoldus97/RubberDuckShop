@@ -30,14 +30,14 @@ namespace RubberDuckShop.Core.ApplicationService.Services
             return _duckCostumeRepository.UpdateDuckCostume(toUpdateDuckCostume);
         }
 
-        public DuckCostume getDuckCostumeById(int id)
+        public DuckCostume GetDuckCostumeById(int id)
         {
-            return _duckCostumeRepository.readDuckCostumeById(id);
+            return _duckCostumeRepository.ReadDuckCostumeById(id);
         }
 
-        public List<DuckCostume> getDuckCostume()
+        public List<DuckCostume> GetDuckCostume()
         {
-            return _duckCostumeRepository.readDuckCostume().ToList();
+            return _duckCostumeRepository.ReadDuckCostume().ToList();
         }
     }
 }
