@@ -12,43 +12,45 @@ namespace RubberDuckShop.UI.RestApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RubberDuckController : ControllerBase
+    public class DuckController : ControllerBase
     {
         readonly IRubberDuckService _rubberDuckService;
 
-        public RubberDuckController(IRubberDuckService rubberDuckService)
+        public DuckController(IRubberDuckService rubberDuckService)
         {
             _rubberDuckService = rubberDuckService;
         }
 
+        // GET api/values
         [HttpGet]
-        public ActionResult<List<RubberDuck>> Get([FromQuery]Filter filter)
+        public ActionResult<IEnumerable<RubberDuck>> Get([FromQuery]Filter filter)
         {
             return _rubberDuckService.GetSortedDucks(filter);
         }
 
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public ActionResult<string> Get(int id)
+        {
+            return "value";
+        }
+
+        // POST api/values
         [HttpPost]
-        public ActionResult<RubberDuck> Post()
+        public void Post([FromBody] string value)
         {
-            return null;
         }
 
-        [HttpPut]
-        public ActionResult<RubberDuck> Put()
+        // PUT api/values/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
         {
-            return null;
         }
 
-        [HttpDelete]
-        public ActionResult<bool> Delete()
+        // DELETE api/values/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
         {
-            return null;
-        }
-
-        [HttpGet]
-        public ActionResult<List<RubberDuck>> GetSorted()
-        {
-            return null;
         }
     }
 }

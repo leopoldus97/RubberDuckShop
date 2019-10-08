@@ -8,17 +8,20 @@ namespace RubberDuckShop.Infrastructure
 {
     public class RubberDuckShopContext : DbContext
     {
-        public RubberDuckShopContext(DbContextOptions<RubberDuckShopContext> opt) : base(opt)
-        {
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        { 
-        }
-
         public DbSet<RubberDuck> RubberDucks { get; set; }
         public DbSet<DuckColor> DuckColors { get; set; }
         public DbSet<DuckCostume> DuckCostumes { get; set; }
         public DbSet<DuckPattern> DuckPatterns { get; set; }
+     
+        public RubberDuckShopContext(DbContextOptions<RubberDuckShopContext> opt) : base(opt)
+        {
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

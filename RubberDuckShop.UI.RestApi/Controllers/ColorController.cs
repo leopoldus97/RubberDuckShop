@@ -11,10 +11,10 @@ namespace RubberDuckShop.UI.RestApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DuckColorController : ControllerBase
+    public class ColorController : ControllerBase
     {
         readonly IDuckColorService _duckColorService;
-        public DuckColorController(IDuckColorService service)
+        public ColorController(IDuckColorService service)
         {
             _duckColorService = service;
         }

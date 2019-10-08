@@ -32,7 +32,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
 
         public IEnumerable<RubberDuck> ReadAllDucks()
         {
-            return _ctx.RubberDucks;
+            return _ctx.RubberDucks.Include(duck => duck.DuckColor).Include(duck => duck.DuckCostume).Include(duck => duck.DuckPattern);
         }
 
         public RubberDuck ReadDuckById(int id)

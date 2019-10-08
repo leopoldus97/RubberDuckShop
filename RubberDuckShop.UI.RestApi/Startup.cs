@@ -44,7 +44,7 @@ namespace RubberDuckShop.UI.RestApi
             services.AddScoped<IDuckCostumeService, DuckCostumeService>();
             services.AddScoped<IDuckPatternRepository, DuckPatternRepository>();
             services.AddScoped<IDuckPatternService, DuckPatternService>();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             //services.AddMvc().AddJsonOptions(options =>
             //{
             //    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
