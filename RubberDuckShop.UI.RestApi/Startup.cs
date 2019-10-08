@@ -6,10 +6,16 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using RubberDuckShop.Core.ApplicationService;
+using RubberDuckShop.Core.ApplicationService.Services;
+using RubberDuckShop.Core.DomainService;
+using RubberDuckShop.Infrastructure;
+using RubberDuckShop.Infrastructure.Repositories;
 
 namespace RubberDuckShop.UI.RestApi
 {
@@ -74,7 +80,11 @@ namespace RubberDuckShop.UI.RestApi
 
             app.UseHttpsRedirection();
             app.UseCors("AnyOrigin");
-            app.UseMvc();
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoint => {
+                endpoint.MapControllers();
+            });
         }
     }
 }

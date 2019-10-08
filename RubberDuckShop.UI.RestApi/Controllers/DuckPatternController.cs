@@ -22,31 +22,31 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DuckPattern>> Get()
         {
-            if (_duckPatternService.getDuckPatterns().ToList().Count == 0)
+            if (_duckPatternService.GetDuckPatterns().ToList().Count == 0)
             {
                 return BadRequest($"No duck patterns to be listed.");
             }
-            return _duckPatternService.getDuckPatterns();
+            return _duckPatternService.GetDuckPatterns();
         }
         [HttpGet("{id}")]
         public ActionResult<DuckPattern> Get(int id)
         {
-            List<DuckPattern> duckPatterns = _duckPatternService.getDuckPatterns().ToList();
+            List<DuckPattern> duckPatterns = _duckPatternService.GetDuckPatterns().ToList();
             foreach (DuckPattern duckPattern in duckPatterns)
             {
-                if (duckPattern.ID != _duckPatternService.getDuckPatternById(id).ID)
+                if (duckPattern.ID != _duckPatternService.GetDuckPatternById(id).ID)
                 {
                     return BadRequest($"Duck pattern not found");
                 }
             }
-            return Ok($"{_duckPatternService.getDuckPatternById(id).Name} found.");
+            return Ok($"{_duckPatternService.GetDuckPatternById(id).Name} found.");
         }
 
         // POST api/values
         [HttpPost]
         public ActionResult<DuckPattern> Post([FromBody] DuckPattern duckPattern)
         {
-            List<DuckPattern> allDuckPatterns = _duckPatternService.getDuckPatterns().ToList();
+            List<DuckPattern> allDuckPatterns = _duckPatternService.GetDuckPatterns().ToList();
             foreach (var item in allDuckPatterns)
             {
                 if (string.IsNullOrEmpty(duckPattern.Name) || duckPattern.ID <= 0)
@@ -59,7 +59,7 @@ namespace RubberDuckShop.UI.RestApi.Controllers
                 }
 
             }
-            return _duckPatternService.addDuckPattern(duckPattern);
+            return _duckPatternService.AddDuckPattern(duckPattern);
         }
 
         // PUT api/values/5
@@ -68,7 +68,7 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         {
             if (id == duckPattern.ID)
             {
-                return _duckPatternService.updateDuckPattern(duckPattern);
+                return _duckPatternService.UpdateDuckPattern(duckPattern);
             }
 
             else if (id < 1)
@@ -83,12 +83,12 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DuckPattern> Delete(int id)
         {
-            var duckPattern = _duckPatternService.getDuckPatternById(id);
+            var duckPattern = _duckPatternService.GetDuckPatternById(id);
             if (duckPattern == null)
             {
                 return StatusCode(404, $"Duck pattern not found with ID \"{id}\"");
             }
-            return _duckPatternService.deleteDuckPattern(id);
+            return _duckPatternService.DeleteDuckPattern(id);
         }
     }
 }

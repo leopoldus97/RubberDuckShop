@@ -22,31 +22,31 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DuckColor>> Get()
         {
-            if (_duckColorService.getDuckColors().ToList().Count == 0)
+            if (_duckColorService.GetDuckColors().ToList().Count == 0)
             {
                 return BadRequest($"No duck colors to be listed.");
             }
-            return _duckColorService.getDuckColors();
+            return _duckColorService.GetDuckColors();
         }
         [HttpGet("{id}")]
         public ActionResult<DuckColor> Get(int id)
         {
-            List<DuckColor> duckColors = _duckColorService.getDuckColors().ToList();
+            List<DuckColor> duckColors = _duckColorService.GetDuckColors().ToList();
             foreach (DuckColor duckColor in duckColors)
             {
-                if (duckColor.ID != _duckColorService.getDuckColorById(id).ID)
+                if (duckColor.ID != _duckColorService.GetDuckColorById(id).ID)
                 {
                     return BadRequest($"Duck color not found");
                 }
             }
-            return Ok($"{_duckColorService.getDuckColorById(id).Name} found.");
+            return Ok($"{_duckColorService.GetDuckColorById(id).Name} found.");
         }
 
         // POST api/values
         [HttpPost]
         public ActionResult<DuckColor> Post([FromBody] DuckColor duckColor)
         {
-            List<DuckColor> allDuckColors = _duckColorService.getDuckColors().ToList();
+            List<DuckColor> allDuckColors = _duckColorService.GetDuckColors().ToList();
             foreach (var item in allDuckColors)
             {
                 if (string.IsNullOrEmpty(duckColor.Name) || duckColor.ID <= 0)
@@ -59,7 +59,7 @@ namespace RubberDuckShop.UI.RestApi.Controllers
                 }
 
             }
-            return _duckColorService.addDuckColor(duckColor);
+            return _duckColorService.AddDuckColor(duckColor);
         }
 
         // PUT api/values/5
@@ -68,7 +68,7 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         {
             if (id == duckColor.ID)
             {
-                return _duckColorService.updateDuckColor(duckColor);
+                return _duckColorService.UpdateDuckColor(duckColor);
             }
 
             else if (id < 1)
@@ -83,12 +83,12 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DuckColor> Delete(int id)
         {
-            var duckColor = _duckColorService.getDuckColorById(id);
+            var duckColor = _duckColorService.GetDuckColorById(id);
             if (duckColor == null)
             {
                 return StatusCode(404, $"Duck color not found with ID \"{id}\"");
             }
-            return _duckColorService.deleteDuckColor(id);
+            return _duckColorService.DeleteDuckColor(id);
         }
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RubberDuckShop.Core.ApplicationService;
 using RubberDuckShop.Core.Entity;
+using RubberDuckShop.Core.Entity.Filtering;
 
 namespace RubberDuckShop.UI.RestApi.Controllers
 {
@@ -21,9 +22,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<RubberDuck> Get()
+        public ActionResult<List<RubberDuck>> Get([FromQuery]Filter filter)
         {
-            return null;
+            return _rubberDuckService.GetSortedDucks(filter);
         }
 
         [HttpPost]

@@ -23,31 +23,31 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DuckCostume>> Get()
         {
-            if (_duckCostumeService.getDuckCostume().ToList().Count == 0)
+            if (_duckCostumeService.GetDuckCostume().ToList().Count == 0)
             {
                 return BadRequest($"No duck costumes to be listed.");
             }
-            return _duckCostumeService.getDuckCostume();
+            return _duckCostumeService.GetDuckCostume();
         }
         [HttpGet("{id}")]
         public ActionResult<DuckCostume> Get(int id)
         {
-            List<DuckCostume> duckCostumes = _duckCostumeService.getDuckCostume().ToList();
+            List<DuckCostume> duckCostumes = _duckCostumeService.GetDuckCostume().ToList();
             foreach (DuckCostume duckCostume in duckCostumes)
             {
-                if (duckCostume.ID != _duckCostumeService.getDuckCostumeById(id).ID)
+                if (duckCostume.ID != _duckCostumeService.GetDuckCostumeById(id).ID)
                 {
                     return BadRequest($"Duck costume not found");
                 }
             }
-            return Ok($"{_duckCostumeService.getDuckCostumeById(id).Name} found.");
+            return Ok($"{_duckCostumeService.GetDuckCostumeById(id).Name} found.");
         }
 
         // POST api/values
         [HttpPost]
         public ActionResult<DuckCostume> Post([FromBody] DuckCostume duckCostume)
         {
-            List<DuckCostume> allDuckCostumes = _duckCostumeService.getDuckCostume().ToList();
+            List<DuckCostume> allDuckCostumes = _duckCostumeService.GetDuckCostume().ToList();
             foreach (var item in allDuckCostumes)
             {
                 if (string.IsNullOrEmpty(duckCostume.Name) || duckCostume.ID <= 0)
@@ -60,7 +60,7 @@ namespace RubberDuckShop.UI.RestApi.Controllers
                 }
 
             }
-            return _duckCostumeService.addDuckCostume(duckCostume);
+            return _duckCostumeService.AddDuckCostume(duckCostume);
         }
 
         // PUT api/values/5
@@ -69,7 +69,7 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         {
             if (id == duckCostume.ID)
             {
-                return _duckCostumeService.updateDuckCostume(duckCostume);
+                return _duckCostumeService.UpdateDuckCostume(duckCostume);
             }
 
             else if (id < 1)
@@ -84,12 +84,12 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DuckCostume> Delete(int id)
         {
-            var duckCostume = _duckCostumeService.getDuckCostumeById(id);
+            var duckCostume = _duckCostumeService.GetDuckCostumeById(id);
             if (duckCostume == null)
             {
                 return StatusCode(404, $"Duck costume not found with ID \"{id}\"");
             }
-            return _duckCostumeService.deleteDuckCostume(id);
+            return _duckCostumeService.DeleteDuckCostume(id);
         }
     }
 }
