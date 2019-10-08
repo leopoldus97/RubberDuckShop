@@ -6,7 +6,7 @@ namespace RubberDuckShop.Core.Entity.Filtering
 {
 
     public enum SortByPrice { 
-        DEFAULT, ASC, DESC
+        DEFAULT = 0, ASC = 1, DESC = 2
     }
 
     public class Filter
@@ -17,6 +17,6 @@ namespace RubberDuckShop.Core.Entity.Filtering
         public DuckPattern DuckPattern { get; set; }
         public DuckCostume DuckCostume { get; set; }
         public DuckGender DuckGender { get; set; }
-        public SortByPrice SortByPrice { get; set; }
+        public SortByPrice SortBy { get; set; }
     }
 }

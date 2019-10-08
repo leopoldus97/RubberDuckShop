@@ -15,19 +15,19 @@ namespace RubberDuckShop.Core.ApplicationService.Services
         {
             _duckColorRepository = duckColorRepository;
         }
-        public DuckColor addDuckColor(DuckColor toAddDuckColor)
+        public DuckColor AddDuckColor(DuckColor toAddDuckColor)
         {
-           return _duckColorRepository.addDuckColor(toAddDuckColor);
+           return _duckColorRepository.AddDuckColor(toAddDuckColor);
         }
 
-        public DuckColor deleteDuckColor(int toDeleteId)
+        public DuckColor DeleteDuckColor(int toDeleteId)
         {
-            return _duckColorRepository.deleteDuckColor(toDeleteId);
+            return _duckColorRepository.DeleteDuckColor(toDeleteId);
         }
 
-        public DuckColor updateDuckColor(DuckColor toUpdateDuckColor)
+        public DuckColor UpdateDuckColor(DuckColor toUpdateDuckColor)
         {
-            return _duckColorRepository.updateDuckColor(toUpdateDuckColor);
+            return _duckColorRepository.UpdateDuckColor(toUpdateDuckColor);
         }
 
         public DuckColor getDuckColorById(int id)
@@ -37,7 +37,7 @@ namespace RubberDuckShop.Core.ApplicationService.Services
 
         public List<DuckColor> getDuckColors()
         {
-            return _duckColorRepository.readDuckColors().ToList();
+            return _duckColorRepository.readDuckColors();
         }
     }
 }

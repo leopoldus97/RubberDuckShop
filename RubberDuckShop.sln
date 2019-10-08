@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubberDuckShop.Core", "RubberDuckShop.Core\RubberDuckShop.Core.csproj", "{4DE6260F-24DA-4758-AB8D-1CFB38F5F268}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubberDuckShop.Core", "RubberDuckShop.Core\RubberDuckShop.Core.csproj", "{4DE6260F-24DA-4758-AB8D-1CFB38F5F268}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubberDuckShop.Core.Entity", "RubberDuckShop.Core.Entity\RubberDuckShop.Core.Entity.csproj", "{AB1510DF-0DC8-4290-810A-8AD29D512C02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubberDuckShop.Core.Entity", "RubberDuckShop.Core.Entity\RubberDuckShop.Core.Entity.csproj", "{AB1510DF-0DC8-4290-810A-8AD29D512C02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubberDuckShop.Infrastructure", "RubberDuckShop.Infrastructure\RubberDuckShop.Infrastructure.csproj", "{071DB21B-ABFD-45CA-81EF-B91B4DA6F3FE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubberDuckShop.UI.RestApi", "RubberDuckShop.UI.RestApi\RubberDuckShop.UI.RestApi.csproj", "{BBB5D2A6-8594-4586-9A02-E8568D32B51C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubberDuckShop.Infrastructure", "RubberDuckShop.Infrastructure\RubberDuckShop.Infrastructure.csproj", "{071DB21B-ABFD-45CA-81EF-B91B4DA6F3FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{222E956C-9E7B-4653-8310-19FDE22C0C5B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{D5178567-7E6A-4C38-8EEE-F6EBC2CFB3CE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{DF32FA99-6B69-49C9-A8FE-3BA98003A176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubberDuckShop.UI.RestApi", "RubberDuckShop.UI.RestApi\RubberDuckShop.UI.RestApi.csproj", "{C21000AB-E8D6-473E-ACBE-DF6D5BFD1F4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{071DB21B-ABFD-45CA-81EF-B91B4DA6F3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{071DB21B-ABFD-45CA-81EF-B91B4DA6F3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{071DB21B-ABFD-45CA-81EF-B91B4DA6F3FE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BBB5D2A6-8594-4586-9A02-E8568D32B51C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BBB5D2A6-8594-4586-9A02-E8568D32B51C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BBB5D2A6-8594-4586-9A02-E8568D32B51C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BBB5D2A6-8594-4586-9A02-E8568D32B51C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C21000AB-E8D6-473E-ACBE-DF6D5BFD1F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C21000AB-E8D6-473E-ACBE-DF6D5BFD1F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C21000AB-E8D6-473E-ACBE-DF6D5BFD1F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C21000AB-E8D6-473E-ACBE-DF6D5BFD1F4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,7 +47,7 @@ Global
 		{4DE6260F-24DA-4758-AB8D-1CFB38F5F268} = {222E956C-9E7B-4653-8310-19FDE22C0C5B}
 		{AB1510DF-0DC8-4290-810A-8AD29D512C02} = {222E956C-9E7B-4653-8310-19FDE22C0C5B}
 		{071DB21B-ABFD-45CA-81EF-B91B4DA6F3FE} = {D5178567-7E6A-4C38-8EEE-F6EBC2CFB3CE}
-		{BBB5D2A6-8594-4586-9A02-E8568D32B51C} = {DF32FA99-6B69-49C9-A8FE-3BA98003A176}
+		{C21000AB-E8D6-473E-ACBE-DF6D5BFD1F4A} = {DF32FA99-6B69-49C9-A8FE-3BA98003A176}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10637A9B-6D55-4B6B-9C40-4769C92F4731}

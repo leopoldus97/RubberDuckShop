@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using RubberDuckShop.Core.DomainService;
 using RubberDuckShop.Core.Entity;
 
@@ -15,14 +16,14 @@ namespace RubberDuckShop.Infrastructure.Repositories
         {
             _ctx = ctx;
         }
-        public DuckColor addDuckColor(DuckColor toAddDuckColor)
+        public DuckColor AddDuckColor(DuckColor toAddDuckColor)
         {
-            var duckColor = _ctx.duckColors.Add(toAddDuckColor).Entity;
+            _ctx.DuckColors.Attach(toAddDuckColor).State = EntityState.Added;
             _ctx.SaveChanges();
-            return duckColor;
+            return toAddDuckColor;
         }
 
-        public DuckColor deleteDuckColor(int toDeleteId)
+        public DuckColor DeleteDuckColor(int toDeleteId)
         {
             var duckColor = _ctx.Remove(new DuckColor()
             {
@@ -32,7 +33,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
             return duckColor;
         }
 
-        public DuckColor updateDuckColor(DuckColor toUpdateDuckColor)
+        public DuckColor UpdateDuckColor(DuckColor toUpdateDuckColor)
         {
             var duckColor = _ctx.duckColors.Update(toUpdateDuckColor).Entity;
             _ctx.SaveChanges();
@@ -46,7 +47,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
 
         public IEnumerable<DuckColor> readDuckColors()
         {
-            return _ctx.duckColors;
+            return _ctx.DuckColors;
         }
     }
 }

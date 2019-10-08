@@ -15,14 +15,14 @@ namespace RubberDuckShop.Infrastructure.Repositories
         {
             _ctx = ctx;
         }
-        public DuckPattern addDuckPattern(DuckPattern toAddDuckPattern)
+        public DuckPattern AddDuckPattern(DuckPattern toAddDuckPattern)
         {
             var duckPattern = _ctx.duckPatterns.Add(toAddDuckPattern).Entity;
             _ctx.SaveChanges();
             return duckPattern;
         }
 
-        public DuckPattern deleteDuckPattern(int toDeleteId)
+        public DuckPattern DeleteDuckPattern(int toDeleteId)
         {
             var duckPattern = _ctx.Remove(new DuckPattern()
             {
@@ -32,7 +32,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
             return duckPattern;
         }
 
-        public DuckPattern updateDuckPattern(DuckPattern toUpdateDuckPattern)
+        public DuckPattern UpdateDuckPattern(DuckPattern toUpdateDuckPattern)
         {
             var duckPattern = _ctx.duckPatterns.Update(toUpdateDuckPattern).Entity;
             _ctx.SaveChanges();
@@ -44,7 +44,7 @@ namespace RubberDuckShop.Infrastructure.Repositories
             return _ctx.duckPatterns.FirstOrDefault(dP => dP.ID == id);
         }
 
-        public IEnumerable<DuckPattern> readDuckPatterns()
+        public IEnumerable<DuckPattern> ReadDuckPatterns()
         {
             return _ctx.duckPatterns;
         }

@@ -6,11 +6,11 @@ namespace RubberDuckShop.Core.Entity
 {
 
     public enum DuckSize { 
-        SMALL = 1, MEDIUM = 2, LARGE = 3, XXL = 4
+        DEFAULT = 0, SMALL = 1, MEDIUM = 2, LARGE = 3, XXL = 4
     }
 
     public enum DuckGender { 
-        MALE = 1, FEMALE = 2
+        DEFAULT = 0, MALE = 1, FEMALE = 2
     }
 
     public class RubberDuck

@@ -8,12 +8,12 @@ namespace RubberDuckShop.Core.DomainService
 {
     public interface IRubberDuckRepository
     {
-        IEnumerable<RubberDuck> readAllDucks();
-        RubberDuck addDuck(RubberDuck toAddRubberDuck);
-        RubberDuck deleteDuck(int toDeleteId);
-        RubberDuck updateDuck(RubberDuck toUpdateRubberDuck);
-        RubberDuck readDuckById(int id);
-        IEnumerable<RubberDuck> readSortedDucks(Filter filter);
-        IEnumerable<RubberDuck> readSearchedDucks(string search);
+        IEnumerable<RubberDuck> ReadAllDucks();
+        RubberDuck AddDuck(RubberDuck toAddRubberDuck);
+        RubberDuck DeleteDuck(int toDeleteId);
+        RubberDuck UpdateDuck(RubberDuck toUpdateRubberDuck);
+        RubberDuck ReadDuckById(int id);
+        IEnumerable<RubberDuck> ReadSortedDucks(Filter filter);
+        IEnumerable<RubberDuck> ReadSearchedDucks(string search);
     }
 }

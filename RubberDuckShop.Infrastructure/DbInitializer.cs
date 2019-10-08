@@ -10,99 +10,105 @@ namespace RubberDuckShop.Infrastructure
     {
         public static void Seed(RubberDuckShopContext ctx)
         {
+            ctx.Database.EnsureDeleted();
             ctx.Database.EnsureCreated();
 
-            DuckColor dcol1 = ctx.duckColors.Add(new DuckColor()
+            DuckColor dcol1 = ctx.DuckColors.Add(new DuckColor()
             {
                 ID = 1,
                 Name = "Yellow"
             }).Entity;
 
-            DuckColor dcol2 = ctx.duckColors.Add(new DuckColor()
+            DuckColor dcol2 = ctx.DuckColors.Add(new DuckColor()
             {
                 ID = 2,
                 Name = "Red"
             }).Entity;
 
-            DuckColor dcol3 = ctx.duckColors.Add(new DuckColor()
+            DuckColor dcol3 = ctx.DuckColors.Add(new DuckColor()
             {
                 ID = 3,
                 Name = "Green"
             }).Entity;
 
-            DuckColor dcol4 = ctx.duckColors.Add(new DuckColor()
+            DuckColor dcol4 = ctx.DuckColors.Add(new DuckColor()
             {
                 ID = 4,
                 Name = "Black"
             }).Entity;
 
-            DuckColor dcol5 = ctx.duckColors.Add(new DuckColor()
+            DuckColor dcol5 = ctx.DuckColors.Add(new DuckColor()
             {
                 ID = 5,
                 Name = "Brown"
             }).Entity;
 
-            DuckColor dcol6 = ctx.duckColors.Add(new DuckColor()
+            DuckColor dcol6 = ctx.DuckColors.Add(new DuckColor()
             {
                 ID = 6,
                 Name = "Pink"
             }).Entity;
 
-            DuckPattern dpat1 = ctx.duckPatterns.Add(new DuckPattern()
+            DuckPattern dpat1 = ctx.DuckPatterns.Add(new DuckPattern()
             {
                 ID = 1,
                 Name = "Spotted"
             }).Entity;
 
-            DuckPattern dpat2 = ctx.duckPatterns.Add(new DuckPattern()
+            DuckPattern dpat2 = ctx.DuckPatterns.Add(new DuckPattern()
             {
                 ID = 2,
                 Name = "Striped"
             }).Entity;
 
-            DuckPattern dpat3 = ctx.duckPatterns.Add(new DuckPattern()
+            DuckPattern dpat3 = ctx.DuckPatterns.Add(new DuckPattern()
             {
                 ID = 3,
                 Name = "No Pattern"
             }).Entity;
 
 
-            DuckCostume dcost1 = ctx.duckCostumes.Add(new DuckCostume()
+            DuckCostume dcost1 = ctx.DuckCostumes.Add(new DuckCostume()
             {
                 ID = 1,
                 Name = "Navy"
             }).Entity;
 
-            DuckCostume dcost2 = ctx.duckCostumes.Add(new DuckCostume()
+            DuckCostume dcost2 = ctx.DuckCostumes.Add(new DuckCostume()
             {
                 ID = 2,
                 Name = "Thor"
             }).Entity;
 
-            DuckCostume dcost3 = ctx.duckCostumes.Add(new DuckCostume()
+            DuckCostume dcost3 = ctx.DuckCostumes.Add(new DuckCostume()
             {
                 ID = 3,
                 Name = "Jack Sparrow"
             }).Entity;
 
-            DuckCostume dcost4 = ctx.duckCostumes.Add(new DuckCostume()
+            DuckCostume dcost4 = ctx.DuckCostumes.Add(new DuckCostume()
             {
                 ID = 4,
                 Name = "Nurse"
             }).Entity;
 
-
             Random rnd = new Random();
 
             for (int i = 0; i < 12; i++)
             {
-                ctx.rubberDucks.Add(new RubberDuck() { 
-                    ID = i,
-                    DuckColor = ctx.duckColors.FirstOrDefault(col => col.ID == rnd.Next(0, 5)),
-                    DuckCostume = ctx.duckCostumes.FirstOrDefault(cos => cos.ID == rnd.Next(0, 3)),
-                    DuckPattern = ctx.duckPatterns.FirstOrDefault(pat => pat.ID == rnd.Next(0, 3)),
-                    DuckSize = (DuckSize) rnd.Next(1, 4),
-                    DuckGender = (DuckGender) rnd.Next(1, 2),
+                int r1 = rnd.Next(1, 6);
+                int r2 = rnd.Next(1, 3);
+                int r3 = rnd.Next(1, 4);
+                int r4 = rnd.Next(1, 4);
+                int r5 = rnd.Next(1, 2);
+
+                ctx.RubberDucks.Add(new RubberDuck() { 
+                    ID = i + 1,
+                    DuckColor = ctx.DuckColors.FirstOrDefault(col => col.ID == r1),
+                    DuckCostume = ctx.DuckCostumes.FirstOrDefault(cos => cos.ID == r2),
+                    DuckPattern = ctx.DuckPatterns.FirstOrDefault(pat => pat.ID == r3),
+                    DuckSize = (DuckSize)r4,
+                    DuckGender = (DuckGender)r5,
                     Price = rnd.Next(600, 1200)
                 });
             }

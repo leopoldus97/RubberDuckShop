@@ -8,11 +8,11 @@ namespace RubberDuckShop.Core.ApplicationService
 {
     public interface IRubberDuckService
     {
-        RubberDuck addDuck(RubberDuck toAddRubberDuck);
-        RubberDuck deleteDuck(int toDeleteId);
-        RubberDuck updateDuck(RubberDuck toUpdateRubberDuck);
-        RubberDuck getDuckById(int id);
-        List<RubberDuck> getSortedDucks(Filter filter);
-        List<RubberDuck> getSearchedDucks(string search);
+        RubberDuck AddDuck(RubberDuck toAddRubberDuck);
+        RubberDuck DeleteDuck(int toDeleteId);
+        RubberDuck UpdateDuck(RubberDuck toUpdateRubberDuck);
+        RubberDuck GetDuckById(int id);
+        List<RubberDuck> GetSortedDucks(Filter filter);
+        List<RubberDuck> GetSearchedDucks(string search);
     }
 }
