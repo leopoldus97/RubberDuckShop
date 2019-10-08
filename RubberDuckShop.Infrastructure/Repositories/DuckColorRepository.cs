@@ -35,9 +35,9 @@ namespace RubberDuckShop.Infrastructure.Repositories
 
         public DuckColor UpdateDuckColor(DuckColor toUpdateDuckColor)
         {
-            var duckColor = _ctx.DuckColors.Update(toUpdateDuckColor).Entity;
+            _ctx.DuckColors.Attach(toUpdateDuckColor).State = EntityState.Modified;
             _ctx.SaveChanges();
-            return duckColor;
+            return toUpdateDuckColor;
         }
 
         public DuckColor ReadDuckColorById(int id)

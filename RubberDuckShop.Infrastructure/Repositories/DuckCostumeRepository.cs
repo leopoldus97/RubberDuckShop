@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using RubberDuckShop.Core.DomainService;
 using RubberDuckShop.Core.Entity;
 
@@ -34,9 +35,9 @@ namespace RubberDuckShop.Infrastructure.Repositories
 
         public DuckCostume UpdateDuckCostume(DuckCostume toUpdateDuckCostume)
         {
-            var duckCostume = _ctx.DuckCostumes.Update(toUpdateDuckCostume).Entity;
+            _ctx.DuckCostumes.Attach(toUpdateDuckCostume).State = EntityState.Modified;
             _ctx.SaveChanges();
-            return duckCostume;
+            return toUpdateDuckCostume;
         }
 
         public DuckCostume ReadDuckCostumeById(int id)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using RubberDuckShop.Core.DomainService;
 using RubberDuckShop.Core.Entity;
 
@@ -34,9 +35,9 @@ namespace RubberDuckShop.Infrastructure.Repositories
 
         public DuckPattern UpdateDuckPattern(DuckPattern toUpdateDuckPattern)
         {
-            var duckPattern = _ctx.DuckPatterns.Update(toUpdateDuckPattern).Entity;
+            _ctx.DuckPatterns.Attach(toUpdateDuckPattern).State = EntityState.Modified;
             _ctx.SaveChanges();
-            return duckPattern;
+            return toUpdateDuckPattern;
         }
 
         public DuckPattern ReadDuckPatternById(int id)
