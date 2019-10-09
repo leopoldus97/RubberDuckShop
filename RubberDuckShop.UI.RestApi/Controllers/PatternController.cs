@@ -31,13 +31,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<DuckPattern> Get(int id)
         {
-            List<DuckPattern> duckPatterns = _duckPatternService.GetDuckPatterns().ToList();
-            foreach (DuckPattern duckPattern in duckPatterns)
+            if (id > _duckPatternService.GetDuckPatterns().Count() || id <= 0)
             {
-                if (duckPattern.ID != _duckPatternService.GetDuckPatternById(id).ID)
-                {
-                    return BadRequest($"Duck pattern not found");
-                }
+                return BadRequest($"Pattern not found. Check your input!");
             }
             return Ok($"{_duckPatternService.GetDuckPatternById(id).Name} found.");
         }

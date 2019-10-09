@@ -31,13 +31,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<DuckColor> Get(int id)
         {
-            List<DuckColor> duckColors = _duckColorService.GetDuckColors().ToList();
-            foreach (DuckColor duckColor in duckColors)
+            if (id > _duckColorService.GetDuckColors().Count() || id <= 0)
             {
-                if (duckColor.ID != _duckColorService.GetDuckColorById(id).ID)
-                {
-                    return BadRequest($"Duck color not found");
-                }
+                return BadRequest($"Color not found. Check your input!");
             }
             return Ok($"{_duckColorService.GetDuckColorById(id).Name} found.");
         }

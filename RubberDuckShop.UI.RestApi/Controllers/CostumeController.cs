@@ -32,13 +32,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<DuckCostume> Get(int id)
         {
-            List<DuckCostume> duckCostumes = _duckCostumeService.GetDuckCostume().ToList();
-            foreach (DuckCostume duckCostume in duckCostumes)
+            if (id > _duckCostumeService.GetDuckCostume().Count() || id <= 0)
             {
-                if (duckCostume.ID != _duckCostumeService.GetDuckCostumeById(id).ID)
-                {
-                    return BadRequest($"Duck costume not found");
-                }
+                return BadRequest($"Costume not found. Check your input!");
             }
             return Ok($"{_duckCostumeService.GetDuckCostumeById(id).Name} found.");
         }

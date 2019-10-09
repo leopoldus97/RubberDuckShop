@@ -18,9 +18,9 @@ namespace RubberDuckShop.Infrastructure.Repositories
         }
         public DuckCostume AddDuckCostume(DuckCostume toAddDuckCostume)
         {
-            var duckCostume = _ctx.DuckCostumes.Add(toAddDuckCostume).Entity;
+            _ctx.DuckCostumes.Add(toAddDuckCostume).State = EntityState.Added;
             _ctx.SaveChanges();
-            return duckCostume;
+            return toAddDuckCostume;
         }
 
         public DuckCostume DeleteDuckCostume(int toDeleteId)
