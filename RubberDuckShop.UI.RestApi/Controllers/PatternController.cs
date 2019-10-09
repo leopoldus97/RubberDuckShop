@@ -33,9 +33,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         {
             if (id > _duckPatternService.GetDuckPatterns().Count() || id <= 0)
             {
-                return BadRequest($"Pattern not found. Check your input!");
+                return BadRequest($"Pattern with ID {id} not found. Check your input!");
             }
-            return Ok($"{_duckPatternService.GetDuckPatternById(id).Name} found.");
+            return Ok($"Duck pattern <{_duckPatternService.GetDuckPatternById(id).Name}> found.");
         }
 
         // POST api/values
@@ -79,10 +79,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DuckPattern> Delete(int id)
         {
-            var duckPattern = _duckPatternService.GetDuckPatternById(id);
-            if (duckPattern == null)
+            if (id <= 0 )
             {
-                return StatusCode(404, $"Duck pattern not found with ID \"{id}\"");
+                return BadRequest($"Check your input!");
             }
             return _duckPatternService.DeleteDuckPattern(id);
         }

@@ -34,9 +34,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         {
             if (id > _duckCostumeService.GetDuckCostume().Count() || id <= 0)
             {
-                return BadRequest($"Costume not found. Check your input!");
+                return BadRequest($"Costume with ID {id} not found. Check your input!");
             }
-            return Ok($"{_duckCostumeService.GetDuckCostumeById(id).Name} found.");
+            return Ok($"Duck Costume <{_duckCostumeService.GetDuckCostumeById(id).Name}> found.");
         }
 
         // POST api/values
@@ -80,10 +80,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DuckCostume> Delete(int id)
         {
-            var duckCostume = _duckCostumeService.GetDuckCostumeById(id);
-            if (duckCostume == null)
+            if (id <= 0)
             {
-                return StatusCode(404, $"Duck costume not found with ID \"{id}\"");
+                return BadRequest($"Check your input!");
             }
             return _duckCostumeService.DeleteDuckCostume(id);
         }

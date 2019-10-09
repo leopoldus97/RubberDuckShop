@@ -33,9 +33,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         {
             if (id > _duckColorService.GetDuckColors().Count() || id <= 0)
             {
-                return BadRequest($"Color not found. Check your input!");
+                return BadRequest($"Color with ID {id} not found. Check your input!");
             }
-            return Ok($"{_duckColorService.GetDuckColorById(id).Name} found.");
+            return Ok($"Duck color <{_duckColorService.GetDuckColorById(id).Name}> found.");
         }
 
         // POST api/values
@@ -79,10 +79,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DuckColor> Delete(int id)
         {
-            var duckColor = _duckColorService.GetDuckColorById(id);
-            if (duckColor == null)
+            if (id <= 0 )
             {
-                return StatusCode(404, $"Duck color not found with ID \"{id}\"");
+                return BadRequest($"Check your input!");
             }
             return _duckColorService.DeleteDuckColor(id);
         }
