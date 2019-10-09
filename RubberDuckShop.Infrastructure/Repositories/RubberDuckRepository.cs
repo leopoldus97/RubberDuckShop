@@ -27,7 +27,9 @@ namespace RubberDuckShop.Infrastructure.Repositories
 
         public RubberDuck DeleteDuck(int toDeleteId)
         {
-            return _ctx.RubberDucks.Remove(new RubberDuck() { ID = toDeleteId }).Entity;
+            var deleted = _ctx.RubberDucks.Remove(new RubberDuck() { ID = toDeleteId }).Entity;
+            _ctx.SaveChanges();
+            return deleted;
         }
 
         public IEnumerable<RubberDuck> ReadAllDucks()
