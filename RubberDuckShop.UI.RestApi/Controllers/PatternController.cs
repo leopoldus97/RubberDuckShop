@@ -45,15 +45,10 @@ namespace RubberDuckShop.UI.RestApi.Controllers
             List<DuckPattern> allDuckPatterns = _duckPatternService.GetDuckPatterns().ToList();
             foreach (var item in allDuckPatterns)
             {
-                if (string.IsNullOrEmpty(duckPattern.Name) || duckPattern.ID <= 0)
+                if (string.IsNullOrEmpty(duckPattern.Name))
                 {
                     return BadRequest($"Check your input!");
                 }
-                if (item.ID == duckPattern.ID)
-                {
-                    return BadRequest($"ID already taken. Choose another ID!");
-                }
-
             }
             return _duckPatternService.AddDuckPattern(duckPattern);
         }

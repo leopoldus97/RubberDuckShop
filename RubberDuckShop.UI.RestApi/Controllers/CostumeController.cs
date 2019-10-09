@@ -46,15 +46,10 @@ namespace RubberDuckShop.UI.RestApi.Controllers
             List<DuckCostume> allDuckCostumes = _duckCostumeService.GetDuckCostume().ToList();
             foreach (var item in allDuckCostumes)
             {
-                if (string.IsNullOrEmpty(duckCostume.Name) || duckCostume.ID <= 0)
+                if (string.IsNullOrEmpty(duckCostume.Name))
                 {
                     return BadRequest($"Check your input!");
                 }
-                if (item.ID == duckCostume.ID)
-                {
-                    return BadRequest($"ID already taken. Choose another ID!");
-                }
-
             }
             return _duckCostumeService.AddDuckCostume(duckCostume);
         }

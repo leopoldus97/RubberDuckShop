@@ -20,6 +20,9 @@ namespace RubberDuckShop.Infrastructure.Repositories
         }
         public RubberDuck AddDuck(RubberDuck toAddRubberDuck)
         {
+            _ctx.Attach(toAddRubberDuck.DuckColor).State = EntityState.Unchanged;
+            _ctx.Attach(toAddRubberDuck.DuckCostume).State = EntityState.Unchanged;
+            _ctx.Attach(toAddRubberDuck.DuckPattern).State = EntityState.Unchanged;
             _ctx.RubberDucks.Attach(toAddRubberDuck).State = EntityState.Added;
             _ctx.SaveChanges();
             return toAddRubberDuck;

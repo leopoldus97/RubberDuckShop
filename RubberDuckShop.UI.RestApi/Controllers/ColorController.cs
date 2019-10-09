@@ -45,15 +45,10 @@ namespace RubberDuckShop.UI.RestApi.Controllers
             List<DuckColor> allDuckColors = _duckColorService.GetDuckColors().ToList();
             foreach (var item in allDuckColors)
             {
-                if (string.IsNullOrEmpty(duckColor.Name) || duckColor.ID <= 0)
+                if (string.IsNullOrEmpty(duckColor.Name))
                 {
                     return BadRequest($"Check your input!");
                 }
-                if (item.ID == duckColor.ID)
-                {
-                    return BadRequest($"ID already taken. Choose another ID!");
-                }
-
             }
             return _duckColorService.AddDuckColor(duckColor);
         }

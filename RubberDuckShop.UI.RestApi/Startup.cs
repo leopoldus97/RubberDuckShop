@@ -38,16 +38,16 @@ namespace RubberDuckShop.UI.RestApi
             services.AddCors(options =>
                 options.AddPolicy("AnyOrigin", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod())
             );
-            //if (Environment.IsDevelopment())
-            //{
+            if (Environment.IsDevelopment())
+            {
                 services.AddDbContext<RubberDuckShopContext>(opt => opt.UseSqlite("Data source=rubberDuckApp.db"));
-            //}
-            //else
-            //{
-            //    Azure SQL database:
-            //    services.AddDbContext<RubberDuckShopContext>(opt =>
-            //        opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
-            //}
+            }
+            else
+            {
+             //   Azure SQL database:
+                services.AddDbContext<RubberDuckShopContext>(opt =>
+                    opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+            }
 
             services.AddScoped<IRubberDuckRepository, RubberDuckRepository>();
             services.AddScoped<IRubberDuckService, RubberDuckService>();
@@ -86,7 +86,7 @@ namespace RubberDuckShop.UI.RestApi
                     var ctx = scope.ServiceProvider.GetService<RubberDuckShopContext>();
                     //ctx.Database.EnsureDeleted();
                     ctx.Database.EnsureCreated();
-                    DbInitializer.Seed(ctx);
+                  //  DbInitializer.Seed(ctx);
                 }
                 app.UseHsts();
             }
