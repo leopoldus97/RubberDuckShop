@@ -42,13 +42,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpPost]
         public ActionResult<DuckPattern> Post([FromBody] DuckPattern duckPattern)
         {
-            List<DuckPattern> allDuckPatterns = _duckPatternService.GetDuckPatterns().ToList();
-            foreach (var item in allDuckPatterns)
+            if (string.IsNullOrEmpty(duckPattern.Name))
             {
-                if (string.IsNullOrEmpty(duckPattern.Name))
-                {
-                    return BadRequest($"Check your input!");
-                }
+                return BadRequest($"Check your input!");
             }
             return _duckPatternService.AddDuckPattern(duckPattern);
         }

@@ -43,13 +43,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpPost]
         public ActionResult<DuckCostume> Post([FromBody] DuckCostume duckCostume)
         {
-            List<DuckCostume> allDuckCostumes = _duckCostumeService.GetDuckCostume().ToList();
-            foreach (var item in allDuckCostumes)
+            if (string.IsNullOrEmpty(duckCostume.Name))
             {
-                if (string.IsNullOrEmpty(duckCostume.Name))
-                {
-                    return BadRequest($"Check your input!");
-                }
+                return BadRequest($"Check your input!");
             }
             return _duckCostumeService.AddDuckCostume(duckCostume);
         }

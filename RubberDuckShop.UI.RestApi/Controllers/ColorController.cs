@@ -42,13 +42,9 @@ namespace RubberDuckShop.UI.RestApi.Controllers
         [HttpPost]
         public ActionResult<DuckColor> Post([FromBody] DuckColor duckColor)
         {
-            List<DuckColor> allDuckColors = _duckColorService.GetDuckColors().ToList();
-            foreach (var item in allDuckColors)
+            if (string.IsNullOrEmpty(duckColor.Name))
             {
-                if (string.IsNullOrEmpty(duckColor.Name))
-                {
-                    return BadRequest($"Check your input!");
-                }
+                return BadRequest($"Check your input!");
             }
             return _duckColorService.AddDuckColor(duckColor);
         }
